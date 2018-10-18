@@ -1,0 +1,21 @@
+version: '2.1'
+
+services:
+  vocbench3:
+    container_name: vocbench3
+    image: datlowedocker/vocbench3
+    volumes:
+      - ./vocbench_data:/app/vocbench3/SemanticTurkeyData
+    ports:
+      - 1979:1979
+    
+  rdf4j:
+    container_name: rdf4j
+    image: yyz1989/rdf4j:2.2.4
+    environment:     
+      - RDF4J_DATA=/opt/rdf4j_data
+    volumes:
+      - ./rdf4j_data:/opt/rdf4j_data
+    ports:
+      - 8080:8080
+    

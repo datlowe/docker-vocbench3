@@ -3,7 +3,7 @@ version: '2.1'
 services:
   vocbench3:
     container_name: vocbench3
-    image: datlowedocker/vocbench3
+    image: datlowedocker/vocbench3:4.0.2
     volumes:
       - ./vocbench_data:/app/vocbench3/SemanticTurkeyData
     ports:

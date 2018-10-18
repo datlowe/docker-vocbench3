@@ -11,4 +11,4 @@ RUN curl -L https://bitbucket.org/art-uniroma2/vocbench3/downloads/vocbench3-4.0
 
 EXPOSE 1979
 
-ENTRYPOINT ["/app/vocbench3/st_server_run"]
+ENTRYPOINT ["/app/vocbench3/semanticturkey-4.0.2/bin/st_server_run"]

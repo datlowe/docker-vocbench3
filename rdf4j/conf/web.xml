@@ -4695,5 +4695,25 @@
         <welcome-file>index.htm</welcome-file>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>all</web-resource-name>
+      <url-pattern>/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>sesame</role-name>
+    </auth-constraint>
+  </security-constraint>          
+  
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>sesame</realm-name>
+  </login-config>
+  
+  <security-role>
+    <description>The role required for sesame</description>
+    <role-name>sesame</role-name>
+  </security-role>    
 
 </web-app>

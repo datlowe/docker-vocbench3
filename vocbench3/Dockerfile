@@ -4,11 +4,16 @@ RUN apk update && apk upgrade && apk add --no-cache curl
 
 WORKDIR /app/vocbench3
 
-RUN curl -L https://bitbucket.org/art-uniroma2/vocbench3/downloads/vocbench3-4.0.2_full.zip -o vocbench3_full.zip \
+ENV VB_VER=4.0.2
+
+RUN curl -L https://bitbucket.org/art-uniroma2/vocbench3/downloads/vocbench3-${VB_VER}_full.zip -o vocbench3_full.zip \
   && unzip vocbench3_full.zip -d /app/vocbench3 \
   && rm vocbench3_full.zip
 
+RUN mkdir data
+
+COPY it.uniroma2.art.semanticturkey.cfg /app/vocbench3/semanticturkey-${VB_VER}/etc/it.uniroma2.art.semanticturkey.cfg
 
 EXPOSE 1979
 
-CMD sh /app/vocbench3/semanticturkey-4.0.2/bin/karaf server
+CMD sh /app/vocbench3/semanticturkey-${VB_VER}/bin/karaf server

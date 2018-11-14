@@ -4,6 +4,8 @@ services:
   vocbench3:
     container_name: vocbench3
     image: datlowedocker/vocbench3:4.0.2
+    environment:     
+      - JAVA_MAX_MEM=512M
     volumes:
       - ./vocbench_data:/app/vocbench3/data
     ports:

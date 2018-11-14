@@ -11,8 +11,10 @@ services:
     
   rdf4j:
     container_name: rdf4j
-    image: yyz1989/rdf4j:2.2.4
+    image: datlowedocker/rdf4j:2.2.4
     environment:     
+      - JVM_PARAMS=-Xmx2g
+      - SESAME_PASS=change_it
       - RDF4J_DATA=/opt/rdf4j_data
     volumes:
       - ./rdf4j_data:/opt/rdf4j_data

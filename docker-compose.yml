@@ -21,5 +21,5 @@ services:
     volumes:
       - ./rdf4j_data:/opt/rdf4j_data
     ports:
-      - 8080:8080
+      - 8082:8082
     

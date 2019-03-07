@@ -3,7 +3,7 @@ version: '2.1'
 services:
   vocbench3:
     container_name: vocbench3
-    image: datlowedocker/vocbench3:4.0.2
+    image: datlowedocker/vocbench3:5.0.0
     environment:     
       - JAVA_MAX_MEM=512M
     volumes:
@@ -13,7 +13,7 @@ services:
     
   rdf4j:
     container_name: rdf4j
-    image: datlowedocker/rdf4j:2.2.4
+    image: datlowedocker/rdf4j:2.4.4
     environment:     
       - JVM_PARAMS=-Xmx2g
       - SESAME_PASS=change_it
